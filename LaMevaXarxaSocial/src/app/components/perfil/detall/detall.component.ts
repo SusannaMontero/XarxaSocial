@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Usuari } from '../llista/Usuari.llista';
 
 @Component({
   selector: 'app-detall',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallComponent implements OnInit {
 
+  @Input() usuari: Usuari = null;
   constructor() { }
 
   ngOnInit(): void {

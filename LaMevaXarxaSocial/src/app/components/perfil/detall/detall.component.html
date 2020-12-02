@@ -1,1 +1,28 @@
-<p>detall works!</p>
+<!-- detall-Usuari de la xarxa social  -->
+<br>
+<div class="container-fluid">
+  <div *ngIf="usuari !== null" >
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img [src]="usuari.imatge" class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-text">{{usuari.nom}}</p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{usuari.cognom}}</p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{usuari.edat}}</p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{usuari.descripcio}}</p>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{usuari.correu}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

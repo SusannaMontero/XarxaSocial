@@ -1,1 +1,14 @@
-<p>llista works!</p>
+<div class="cotnainer-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div class="list-group">
+        <!-- Recor tot el array d'usuaris i el mostra per pantalla i al event (Click) seleccionem un usuari que es del que pasarem les dades al detall-->
+        <a *ngFor="let usuari of usuaris" class="list-group-item list-group-item-action" [ngClass]="{ 'active': usuariSeleccionat === usuari }" (click)="seleccionarUsuari(usuari)">{{usuari.nom}} {{usuari.cognom}}</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <!-- anem a la pagina de detal d'usuari de l'usuari seleccionat -->
+      <app-detall [usuari]="usuariSeleccionat"></app-detall>
+    </div>
+  </div>
+</div>
