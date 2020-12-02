@@ -1,25 +1,5 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 
-<div class="container-fluid">
-
-  <div class="row">
-    <div class="col">
-      <div class="btn-group col-12" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary col-4" (click)="canviEvent('perfil')"></button>
-        <button type="button" class="btn btn-secondary col-4" (click)="canviEvent('panell')"></button>
-      </div>
-    </div>
-  </div>
-
-
-  <div *ngIf="category === 'perfil'" class="row" style="margin-top: 1em;">
-          <app-perfil></app-perfil>
-  </div>
-
-  <div *ngIf="category === 'panell'"  class="row" style = "margin-top: 1em">
-          <app-admin></app-admin>
-  </div>
-</div>
 
 
