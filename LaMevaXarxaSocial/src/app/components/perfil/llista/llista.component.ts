@@ -8,12 +8,13 @@ import { Usuari } from './Usuari.llista';
 })
 export class LlistaComponent implements OnInit {
 
+  // Variables
   usuaris: Usuari[]=[];
   usuariSeleccionat: Usuari = null;
 
   constructor() { }
 
-  // array que conte les dades del usuari
+  // array que conte les dades de l'usuari
   ngOnInit(): void {
     this.usuaris.push(new Usuari('Wolkfans Amadeus', 'Mozzart','50','assets/fotoMozart.jpg','Aquest es el primer Usuari de la llista', 'WAMozzart@musica.com','*****','*****'))
     this.usuaris.push(new Usuari('Manuel', 'Carrasco','39','assets/manuelCarrasco.jpg','Aquest es el segon Usuari de la llista', 'Mcarrasco@musica.com','****','****'))
