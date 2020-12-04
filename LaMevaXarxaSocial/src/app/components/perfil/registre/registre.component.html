@@ -1,1 +1,24 @@
-<p>registre works!</p>
+<br>
+<br>
+<div class="container">
+    <!--formulari recollida de dades-->
+    <form [formGroup]="user">
+
+        <!--camp nom-->
+        <div class="form-group">
+            <label class="control-label col-md-2">Nom</label>
+            <input type="text" formControlName="nom" placeholder="Nom" class="form-control"
+            [[ngClass]="{ 'is-invalid': submitted && f.nom.errors}"]>
+
+            <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                <div *ngIf="f.nom.errors.required">El nom és obligatori</div>
+            </div>
+        </div>
+
+        <!--botó-->
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="enviarDades()">Enviar</button>
+        </div>
+    </form>
+</div>
+

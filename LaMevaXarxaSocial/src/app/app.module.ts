@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//importem aquestes dues classes per treballar amb formularis
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
@@ -11,6 +15,7 @@ import { DetallComponent } from './components/perfil/detall/detall.component';
 import { RegistreComponent } from './components/perfil/registre/registre.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LlistaUsComponent } from './components/admin/llista-us/llista-us.component';
+import { IniciComponent } from './components/inici/inici.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { LlistaUsComponent } from './components/admin/llista-us/llista-us.compon
     DetallComponent,
     RegistreComponent,
     AdminComponent,
-    LlistaUsComponent
+    LlistaUsComponent,
+    IniciComponent
   ],
   imports: [
     BrowserModule,
