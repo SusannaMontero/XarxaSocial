@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Usuari } from '../llista/Usuari.llista';
+import { Usuari } from '../../Usuari.llista';
 
 @Component({
   selector: 'app-detall',
