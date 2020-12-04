@@ -6,13 +6,38 @@
 
         <!--camp nom-->
         <div class="form-group">
-            <label class="control-label col-md-2">Nom</label>
+            <label class="control-label col-md-2">Nom d'usuari</label>
             <input type="text" formControlName="nom" placeholder="Nom" class="form-control"
-            [[ngClass]="{ 'is-invalid': submitted && f.nom.errors}"]>
+            [ngClass]="{'is-invalid': submitted && f.nom.errors}">
+
+            <!--la f. ve del ts, si es compleixen les dues condicions es true-->
 
             <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
                 <div *ngIf="f.nom.errors.required">El nom és obligatori</div>
             </div>
+        </div>
+
+        <!--camp cognom-->
+        <div class="form-group">
+            <label class="control-label col-md-2">Cognoms d'usuari</label>
+            <input type="text" formControlSurname="cognom" placeholder="Cognoms" class="form-control"
+            [ngClass]="{'is-invalid': submitted && f.cognom.errors}">
+
+            <div *ngIf="submitted && f.cognom.errors" class="invalid-feedback">
+                <div *ngIf="f.cognom.errors.required">El cognom és obligatori</div>
+            </div>
+<!--em quedo aquí, falta fer la resta de camps del formulari+les funcions al ts de registre per validar els camps-->
+        </div>
+
+        <!--camp email-->
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <input type="email" formControlEmail="email" placeholder="Email"  class="form-control"
+            [ngClass]="{'is-invalid': submitted && f.email.errors}">
+
+            <div *ngIf="submitted && f.email.errors" class="invalid_feedback"></div>
+            <div *ngIf="f.email.errors.required">L'email és obligatori</div>
+            <div *ngIf="f.email.errors.email">L'email no és vàlid</div>
         </div>
 
         <!--botó-->
