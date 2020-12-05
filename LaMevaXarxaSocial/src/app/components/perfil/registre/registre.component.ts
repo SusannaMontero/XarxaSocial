@@ -13,18 +13,22 @@ import Swal from 'sweetalert2';
 
 export class RegistreComponent implements OnInit {
 
-  //inicialitzem la variable formBuilder(hem importat a dalt)
+  //inicialitzem la variable formBuilder(hem importat a dalt)del tipus FormBuilder
   constructor( private formBuilder: FormBuilder ) { }
 
   //creem la variable useron desarem les dades que es reben del formulari
   user: FormGroup;
   submitted = false;
-  
+
   ngOnInit(): void {
 
     //posem les condicions dels camps
     this.user = this.formBuilder.group({
-      nom: ['', Validators.required]
+      nom: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      cognom: ['', Validators.required],
+      edat: ['', Validators.required],
+      descripcio: ['', Validators.required]
     });
   }
 
