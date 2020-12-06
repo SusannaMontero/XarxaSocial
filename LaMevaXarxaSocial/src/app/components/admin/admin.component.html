@@ -3,13 +3,14 @@
 
     <div class="col">
       <div class="list-group">
-        <a *ngFor="let usuario of usuarioArray" class="list-group-item list-group-item-action"
-          (click)="selectCharacter(usuario)">{{usuario.nom}}</a>
+        <a *ngFor="let usuario of usuarioArray" class="list-group-item list-group-item-action" (click)="selectUsuario(usuario)">{{usuario.nom}}</a>
+                <!-- guarda el array usuarioarray en el usuario con el let y passa el usuario seleccionado-->
       </div>
     </div>
 
     <div class="col">
       <app-llista-us [usuario]="usuarioSelected" (deleteEvent)="deleteUsuario($event)"></app-llista-us>
+      <!-- al llista-us pasas el usuario seleccionado i el deleteUsuario con el evento -->
     </div>
 
 

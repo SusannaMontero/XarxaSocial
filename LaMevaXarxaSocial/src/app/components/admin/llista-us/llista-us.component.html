@@ -1,37 +1,45 @@
 <div *ngIf="usuario !== null" class="card" style="width: 18rem;">
-
+        <!-- recorre todo el usuario con el ngIf, mientras no se salga del array y no haya nada (null) -->
   <div class="card-body">
     <img [src]="usuario.imatge" class="card-img-top" alt="">
 
     <div class="card-body">
+          <!-- card-body te saca la información como si fuera una carta -->
       <h5 class="card-title"><strong>{{usuario.nom}} {{usuario.cognom}}</strong></h5>
+          <!-- saca por pantalla el nombre y apellido del usuario con un titulo -->
     </div>
     <form>
 
       <div class="card-body">
         <p class="card-text"><strong>Edat: </strong>{{usuario.edat}}</p>
+        <!-- saca por pantalla la edad -->
       </div>
 
       <div class="card-body">
         <p class="card-text"><strong>Descripció: </strong>{{usuario.descripcio}}</p>
+        <!-- saca por pantalla la descripcion -->
       </div>
 
       <div class="card-body">
         <p class="card-text"><strong>Correu: </strong>{{usuario.correu}}</p>
+        <!-- saca por pantalla el correo -->
       </div>
 
       <div class="card-body">
         <p class="card-text"><strong>Contrasenya: </strong>{{usuario.contrasenya}}</p>
+        <!-- saca por pantalla la contraseña -->
       </div>
 
       <div class="card-body">
         <p class="card-text"><strong>Confirmar contrasenya: </strong>{{usuario.confirmarContrasenya}}</p>
+        <!-- saca por pantalla el confirmar contraseña -->
       </div>
 
     </form>
 
     <div class="card-body">
       <button type="button" class="btn btn-danger" (click)="deleteUsuario()">Eliminar</button>
+        <!-- es el boton para eliminar usuario, al pulsar te lleva en la funcion del typescript -->
     </div>
 
   </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuari } from '../Usuari.llista';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin',
@@ -9,11 +8,11 @@ import Swal from 'sweetalert2';
 })
 export class AdminComponent implements OnInit {
 
-  usuarioArray: Usuari[] = [];
-  usuarioSelected: Usuari = null;
+  usuarioArray: Usuari[] = []; //array donde guarda la informacion de los perfiles
+  usuarioSelected: Usuari = null; //guarda el usuario seleccionado.
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {  //perfiles de los usuarios con objetos
     this.usuarioArray.push(new Usuari('Josep', 'Rodríguez','99','assets/IMG.jpg','El millor01', 'josep@gmail.com','*****','*****'))
     this.usuarioArray.push(new Usuari('Cristian', 'Tortosa','99','assets/Cristian.jpg','El millor02', 'cristian@gmail.com','****','****'))
     this.usuarioArray.push(new Usuari('Ronnie', 'Coleman','99','assets/ronnie.jpg','El millor05', 'king@gmail.com','**','**'))
@@ -22,10 +21,10 @@ export class AdminComponent implements OnInit {
     this.usuarioArray.push(new Usuari('Jordi', 'Obis','99','assets/AntonioOrozco.jpg','El millor04', 'Jordi@gmail.com','**','**'))
   }
 
-   // Función que se ejecuta al hacer click en un personaje de la lista
-   selectCharacter(usuario: Usuari): void {
+   // Función que se ejecuta al hacer click en un usuario de la lista
+   selectUsuario(usuario: Usuari): void {
 
-    // Guardamos en una variable de la clase el personaje seleccionado
+    // Guardamos en una variable de la clase del usuario seleccionado
     this.usuarioSelected = usuario;
   }
 
