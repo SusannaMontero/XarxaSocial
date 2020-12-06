@@ -5,14 +5,14 @@
         <!-- Recor tot el array d'usuaris i printa-->
 
         <a *ngFor="let usuari of users" class="list-group-item list-group-item-action text-center" [ngClass]="{ 'active': userSeleccionat === usuari }" (click)="seleccionarUser(usuari)">{{usuari.nom}} {{usuari.cognom}} <button type="button" class="btn btn-danger" (click)="deleteUsuario()">Delete</button> </a>
-
+                                                                                                                                                                                                                          <!-- boto per eliminar el perfil de l'usuari -->
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      <!-- guarda el usuari seleccionat dins del guardarUsuari -->
+      <!-- guarda el usuari seleccionat -->
       <app-detall [usuari]="userSeleccionat"></app-detall>
 
-      <!-- boto per eliminar el perfil de l'usuari -->
+
 
     </div>
   </div>
