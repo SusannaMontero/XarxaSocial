@@ -1,34 +1,17 @@
-<div *ngIf="usuario !== null" class="card" style="width: 18rem;">
+<div class="container">
+  <div class="row mt-3">
 
-  <div class="card-body">
-    <img [src]="usuario.imatge" class="card-img-top" alt="">
-
-    <h5 class="card-title">{{usuario.nom}} {{usuario.cognom}}</h5>
-    <form>
-
-      <div class="card-body">
-        <p class="card-text">Edat: {{usuario.edat}}</p>
+    <div class="col">
+      <div class="list-group">
+        <a *ngFor="let usuario of usuarioArray" class="list-group-item list-group-item-action"
+          (click)="selectCharacter(usuario)">{{usuario.nom}}</a>
       </div>
+    </div>
 
-      <div class="card-body">
-        <p class="card-text">Descripció: {{usuario.descripcio}}</p>
-      </div>
+    <div class="col">
+      <app-llista-us [usuario]="usuarioSelected" (deleteEvent)="deleteUsuario($event)"></app-llista-us>
+    </div>
 
-      <div class="card-body">
-        <p class="card-text">Correu: {{usuario.correu}}</p>
-      </div>
 
-      <div class="card-body">
-        <p class="card-text">Contrasenya: {{usuario.contrasenya}}</p>
-      </div>
-
-      <div class="card-body">
-        <p class="card-text">Confirmar contrasenya: {{usuario.confirmarContrasenya}}</p>
-      </div>
-
-    </form>
-
-    <button type="button" class="btn btn-danger" (click)="deleteUsuario()">Eliminar</button>
   </div>
-
 </div>

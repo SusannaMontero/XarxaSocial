@@ -1,1 +1,39 @@
-<p>llista-us works!</p>
+<div *ngIf="usuario !== null" class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <img [src]="usuario.imatge" class="card-img-top" alt="">
+
+    <div class="card-body">
+      <h5 class="card-title"><strong>{{usuario.nom}} {{usuario.cognom}}</strong></h5>
+    </div>
+    <form>
+
+      <div class="card-body">
+        <p class="card-text"><strong>Edat: </strong>{{usuario.edat}}</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text"><strong>Descripció: </strong>{{usuario.descripcio}}</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text"><strong>Correu: </strong>{{usuario.correu}}</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text"><strong>Contrasenya: </strong>{{usuario.contrasenya}}</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text"><strong>Confirmar contrasenya: </strong>{{usuario.confirmarContrasenya}}</p>
+      </div>
+
+    </form>
+
+    <div class="card-body">
+      <button type="button" class="btn btn-danger" (click)="deleteUsuario()">Eliminar</button>
+    </div>
+
+  </div>
+
+</div>
