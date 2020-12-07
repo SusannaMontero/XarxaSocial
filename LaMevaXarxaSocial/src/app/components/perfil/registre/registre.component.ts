@@ -26,9 +26,9 @@ export class RegistreComponent implements OnInit {
     this.user = this.formBuilder.group({
       nom: ['', Validators.required],
       cognom: ['', Validators.required],
-      edat: ['', Validators.required],
+      edat: ['', Validators.required, Validators.max, Validators],
       foto: ['', Validators.required],
-      descripcio: ['', Validators.required],
+      descripcio: ['', Validators.required, Validators.min],
       email: ['', [Validators.required, Validators.email]],
     });
   }
