@@ -25,10 +25,11 @@ export class RegistreComponent implements OnInit {
     //posem les condicions dels camps
     this.user = this.formBuilder.group({
       nom: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
       cognom: ['', Validators.required],
       edat: ['', Validators.required],
-      descripcio: ['', Validators.required]
+      foto: ['', Validators.required],
+      descripcio: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 

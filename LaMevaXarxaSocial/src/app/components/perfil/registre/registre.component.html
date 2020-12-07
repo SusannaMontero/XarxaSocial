@@ -4,9 +4,7 @@
     <!--formulari recollida de dades-->
     <form [formGroup]="user">
 
-<!--/////////////////////////////////1ª fila del forumulari/////////////////////////////////////////////////////////////////////-->
-
-              <!--camp nom-->
+      <!--camp nom-->
         <div class="form-row">
           <div class="formg-group col-md-6">
             <label class="control-label">Nom d'usuari</label>
@@ -19,10 +17,13 @@
                 <div *ngIf="f.nom.errors.required">El nom és obligatori</div>
             </div>
           </div>
+        </div>
+        <br>
 
       <!--camp cognom-->
+        <div class="form-row">
           <div class="formg-group col-md-6">
-            <label class="control-label col-md-6">Cognoms d'usuari</label>
+            <label class="control-label">Cognoms d'usuari</label>
             <input type="text" formControlSurname="cognom" placeholder="Cognoms" class="form-control"
             [ngClass]="{'is-invalid': submitted && f.cognom.errors}">
 
@@ -32,8 +33,6 @@
           </div>
         </div>
         <br>
-
-<!--///////////////////////////////////2ª fila del forumulari//////////////////////////////////////////////////////////////-->
 
       <!--camp edat-->
         <div class="form-row">
@@ -46,11 +45,13 @@
                 <div *ngIf="f.edat.errors.required">Camp obligatori</div>
             </div>
           </div>
+        </div>
 
       <!--camp adjuntar foto-->
+        <div class="form-row">
           <div class="form-group col-md-6">
             <label class="control-label">Adjunta la teva foto</label>
-            <input type="file" formControlFile="foto" class="form-control-file"
+            <input type="file" formControlFile="foto" class="form-control"
             [ngClass]="{'is-invalid': submitted && f.foto.errors}">
 
             <div *ngIf="submitted && f.foto.errors" class="invalid-feedback">
@@ -59,13 +60,11 @@
           </div>
         </div>
 
-<!--/////////////////////////////////////3ª fila del formulari///////////////////////////////////////////////////////////////////-->
-
       <!--camp descripció-->
       <div class="form-row">
         <div class="form-group col-md-2 mb-9">
           <label class="control-label">Descripció</label>
-          <textarea class="form-control" rows="3" formControlDescription="descripcio" class="form-control-description"
+          <textarea class="form-control" rows="3" formControlDescription="descripcio" class="form-control"
           [ngClass]="{'is-invalid': submitted && f.descripcio.errors}"></textarea>
 
           <div *ngIf="submitted && f.descripcio.errors" class="invalid-feedback">
@@ -74,11 +73,9 @@
         </div>
       </div>
 
-<!--/////////////////////////////////////4ª fila del formulari///////////////////////////////////////////////////////////////////-->
-
       <!--camp email-->
       <div class="form-row">
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-6">
             <label class="control-label">Email</label>
             <input type="email" formControlEmail="email" placeholder="correu@exemple.com"  class="form-control"
             [ngClass]="{'is-invalid': submitted && f.email.errors}">
@@ -90,6 +87,18 @@
         </div>
       </div>
 
+      <!--camp contrasenya i confirmar contrasenya-->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label clas="contro-label">Contrasenya</label>
+          <input type="pasword" class="form-control" id="inputPasword" placeholder="Contrasenya">
+        </div>
+        <div class="form-group col-md-9">
+          <button type="submit" class="btn btn-secondary">Confirma la contrasenya</button>
+        </div>
+      </div>
+
+      <br><br>
       <!--botó-->
         <div class="form-group">
             <button class="btn btn-primary" (click)="enviarDades()">Enviar</button>
