@@ -16,7 +16,7 @@ import { RegistreComponent } from './components/perfil/registre/registre.compone
 import { AdminComponent } from './components/admin/admin.component';
 import { LlistaUsComponent } from './components/admin/llista-us/llista-us.component';
 import { IniciComponent } from './components/inici/inici.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegistreComponent,
     AdminComponent,
     LlistaUsComponent,
-    IniciComponent
+    IniciComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

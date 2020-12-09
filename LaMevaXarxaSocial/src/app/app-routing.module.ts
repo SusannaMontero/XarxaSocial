@@ -10,12 +10,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { RegistreComponent } from './components/perfil/registre/registre.component';
 
 
-{ path: 'llista', component: LlistaComponent},
-{ path: 'registre', component: RegistreComponent},
-];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 
 //importem Sweet Alert, previament l'hem instal.lat al CMD amb npm install sweetalert2
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registre',
@@ -66,7 +65,7 @@ export class RegistreComponent implements OnInit {
 
 
   //si totes les dades i camps són correctes es mostra la següent finestra emergent
-    Swal.fire('Les dades introduïdes són correctes');
+
   }
 
 }
