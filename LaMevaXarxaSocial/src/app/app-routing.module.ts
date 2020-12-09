@@ -9,6 +9,7 @@ import { LlistaComponent } from './components/perfil/llista/llista.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { RegistreComponent } from './components/perfil/registre/registre.component';
 
+
 const routes: Routes = [{path: '', pathMatch: 'full', redirectTo: 'inici'},
 { path: 'llista', component: LlistaComponent},
 { path: 'registre', component: RegistreComponent}, 
@@ -20,8 +21,9 @@ const routes: Routes = [{path: '', pathMatch: 'full', redirectTo: 'inici'},
 { path: 'detall', component: DetallComponent }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -17,6 +17,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LlistaUsComponent } from './components/admin/llista-us/llista-us.component';
 import { IniciComponent } from './components/inici/inici.component';
 
+import { FooterComponent } from './components/footer/footer.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { IniciComponent } from './components/inici/inici.component';
     RegistreComponent,
     AdminComponent,
     LlistaUsComponent,
-    IniciComponent
+    IniciComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
