@@ -1,6 +1,6 @@
 
 import { Component, Input, OnInit } from '@angular/core';
-import { Usuari } from './Usuari.llista';
+import { Usuari } from '../../Usuari.llista';
 
 
 @Component({

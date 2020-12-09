@@ -2,11 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 
 //importem Sweet Alert, previament l'hem instal.lat al CMD amb npm install sweetalert2
-
-
 import Swal from 'sweetalert2';
-import { Usuari } from '../llista/Usuari.llista';
-
+import { Usuari } from '../../Usuari.llista';
 
 @Component({
   selector: 'app-registre',
@@ -61,7 +58,7 @@ this.newRegistre = new Usuari(itemForm.controls.nom.value,
                    itemForm.controls.confirmarContrasenya.value);  
 
 //enviem l'event registrar i li passem l'usuari creat
-this.registrar.emit(this.newRegistre);
+this.registrar.emit(this.newRegistre)
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +91,7 @@ this.registrar.emit(this.newRegistre);
 
 
   //si totes les dades i camps són correctes es mostra la següent finestra emergent
-
+    Swal.fire('Les dades introduïdes són correctes');
   }
 
 }
