@@ -2,14 +2,14 @@
 <br>
 <div class="container">
     <!--formulari recollida de dades-->
-    <form [formGroup]="user">
+    <form [formGroup]="user" #itemForm="ngForm">
 
       <!--camp nom (formControlName és una etiqueta que aten els canvis al valor del control-->
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label class="control-label">Nom d'usuari</label>
             <input type="text" formControlName="nom" placeholder="Nom" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.nom.errors}">
+            [ngClass]="{ 'is-invalid': submitted && f.nom.errors}" ngModel required>
 
             <!--la f. ve del ts, si es compleixen les dues condicions es true-->
 
@@ -22,10 +22,10 @@
 
       <!--camp cognom-->
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label class="control-label">Cognoms d'usuari</label>
             <input type="text" formControlName="cognom" placeholder="Cognoms" class="form-control"
-            [ngClass]="{'is-invalid': submitted && f.cognom.errors}">
+            [ngClass]="{'is-invalid': submitted && f.cognom.errors}" ngModel required>
 
             <div *ngIf="submitted && f.cognom.errors" class="invalid-feedback">
                 <div *ngIf="f.cognom.errors.required">El cognom és obligatori</div>
@@ -36,10 +36,10 @@
 
       <!--camp edat-->
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label class="control-label">Edat</label>
             <input type="number" formControlName="edat" class="form-control"
-            [ngClass]="{'is-invalid': submitted && f.edat.errors}">
+            [ngClass]="{'is-invalid': submitted && f.edat.errors}" ngModel required>
 
             <div *ngIf="submitted && f.edat.errors" class="invalid-feedback">
                 <div *ngIf="f.edat.errors.required">Camp obligatori</div>
@@ -49,10 +49,10 @@
 
       <!--camp adjuntar foto-->
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label class="control-label">Adjunta la teva foto</label>
             <input type="file" formControlName="foto" class="form-control"
-            [ngClass]="{'is-invalid': submitted && f.foto.errors}">
+            [ngClass]="{'is-invalid': submitted && f.foto.errors}" ngModel required>
 
             <div *ngIf="submitted && f.foto.errors" class="invalid-feedback">
               <div *ngIf="f.foto.errors.required">Camp obligatori</div>
@@ -62,10 +62,10 @@
 
       <!--camp descripció-->
       <div class="form-row">
-        <div class="form-group col-md-2 mb-9">
+        <div class="form-group col-md-12 mb-12">
           <label class="control-label">Descripció</label>
           <textarea class="form-control" rows="3" formControlName="descripcio" class="form-control"
-          [ngClass]="{'is-invalid': submitted && f.descripcio.errors}"></textarea>
+          [ngClass]="{'is-invalid': submitted && f.descripcio.errors}" ngModel required></textarea>
 
           <div *ngIf="submitted && f.descripcio.errors" class="invalid-feedback">
             <div *ngIf="f.descripcio.errors.required">Camp obligatori</div>
@@ -76,10 +76,10 @@
 
       <!--camp email-->
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <label class="control-label">Email</label>
             <input type="email" formControlN="email" placeholder="correu@exemple.com"  class="form-control"
-            [ngClass]="{'is-invalid': submitted && f.email.errors}">
+            [ngClass]="{'is-invalid': submitted && f.email.errors}" ngModel required>
 
             <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
                 <div *ngIf="f.email.errors.required">L'email és obligatori</div>
@@ -90,10 +90,10 @@
 
       <!--camp contrasenya i confirmar contrasenya-->
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
           <label class="control-label">Contrasenya</label>
           <input type="pasword" formControlName="contrasenya"  id="contrasenya" placeholder="Contrasenya" class="form-control"
-          [ngClass]="{'is-invalid': submitted && f.contrasenya.errors}">
+          [ngClass]="{'is-invalid': submitted && f.contrasenya.errors}" ngModel required>
 
           <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
              <div *ngIf="f.contrasenya.errors.required">Contrasenya obligatoria</div>
@@ -102,9 +102,9 @@
       </div>
 
      <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
           <input type="password" formControlName="confirmarContrasenya" id="confirarContrasenya" placeholder="Repeteix la contrasenya" class="form-control"
-          [ngClass]="{'is-invalid': submitted && f.confirmarContrasenya.errors}">
+          [ngClass]="{'is-invalid': submitted && f.confirmarContrasenya.errors}" ngModel required>
 
           <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
             <div *ngIf="f.confirmarContrasenya.errors.required">Error</div>
@@ -120,7 +120,7 @@
       <br><br>
       <!--botó-->
         <div class="form-group">
-            <button class="btn btn-primary" (click)="enviarDades()">Enviar</button>
+            <button type="submit" class="btn btn-primary" (click)="enviarDades()">Enviar</button>
         </div>
     </form>
 </div>
