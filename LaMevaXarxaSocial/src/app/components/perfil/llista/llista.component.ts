@@ -1,5 +1,7 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuari } from './Usuari.llista';
+
 
 @Component({
   selector: 'app-llista',
