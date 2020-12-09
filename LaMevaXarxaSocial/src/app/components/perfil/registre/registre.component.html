@@ -4,9 +4,9 @@
     <!--formulari recollida de dades-->
     <form [formGroup]="user">
 
-      <!--camp nom-->
+      <!--camp nom (formControlName és una etiqueta que aten els canvis al valor del control-->
         <div class="form-row">
-          <div class="formg-group col-md-6">
+          <div class="form-group col-md-6">
             <label class="control-label">Nom d'usuari</label>
             <input type="text" formControlName="nom" placeholder="Nom" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.nom.errors}">
@@ -22,9 +22,9 @@
 
       <!--camp cognom-->
         <div class="form-row">
-          <div class="formg-group col-md-6">
+          <div class="form-group col-md-6">
             <label class="control-label">Cognoms d'usuari</label>
-            <input type="text" formControlSurname="cognom" placeholder="Cognoms" class="form-control"
+            <input type="text" formControlName="cognom" placeholder="Cognoms" class="form-control"
             [ngClass]="{'is-invalid': submitted && f.cognom.errors}">
 
             <div *ngIf="submitted && f.cognom.errors" class="invalid-feedback">
@@ -38,7 +38,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label class="control-label">Edat</label>
-            <input type="number" formControlAge="edat" placeholder="Màxim 2 dígits" class="form-control"
+            <input type="number" formControlName="edat" class="form-control"
             [ngClass]="{'is-invalid': submitted && f.edat.errors}">
 
             <div *ngIf="submitted && f.edat.errors" class="invalid-feedback">
@@ -51,7 +51,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label class="control-label">Adjunta la teva foto</label>
-            <input type="file" formControlFile="foto" class="form-control"
+            <input type="file" formControlName="foto" class="form-control"
             [ngClass]="{'is-invalid': submitted && f.foto.errors}">
 
             <div *ngIf="submitted && f.foto.errors" class="invalid-feedback">
@@ -64,12 +64,13 @@
       <div class="form-row">
         <div class="form-group col-md-2 mb-9">
           <label class="control-label">Descripció</label>
-          <textarea class="form-control" rows="3" formControlDescription="descripcio" class="form-control"
+          <textarea class="form-control" rows="3" formControlName="descripcio" class="form-control"
           [ngClass]="{'is-invalid': submitted && f.descripcio.errors}"></textarea>
 
           <div *ngIf="submitted && f.descripcio.errors" class="invalid-feedback">
             <div *ngIf="f.descripcio.errors.required">Camp obligatori</div>
           </div>
+         <div *ngIf="f.descripcio.errors.minLength">El text ha de ser més llarg</div>
         </div>
       </div>
 
@@ -77,7 +78,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
             <label class="control-label">Email</label>
-            <input type="email" formControlEmail="email" placeholder="correu@exemple.com"  class="form-control"
+            <input type="email" formControlN="email" placeholder="correu@exemple.com"  class="form-control"
             [ngClass]="{'is-invalid': submitted && f.email.errors}">
 
             <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
@@ -90,13 +91,31 @@
       <!--camp contrasenya i confirmar contrasenya-->
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label clas="contro-label">Contrasenya</label>
-          <input type="pasword" class="form-control" id="inputPasword" placeholder="Contrasenya">
-        </div>
-        <div class="form-group col-md-9">
-          <button type="submit" class="btn btn-secondary">Confirma la contrasenya</button>
+          <label class="control-label">Contrasenya</label>
+          <input type="pasword" formControlName="contrasenya"  id="contrasenya" placeholder="Contrasenya" class="form-control"
+          [ngClass]="{'is-invalid': submitted && f.contrasenya.errors}">
+
+          <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
+             <div *ngIf="f.contrasenya.errors.required">Contrasenya obligatoria</div>
+          </div>
         </div>
       </div>
+
+     <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="password" formControlName="confirmarContrasenya" id="confirarContrasenya" placeholder="Repeteix la contrasenya" class="form-control"
+          [ngClass]="{'is-invalid': submitted && f.confirmarContrasenya.errors}">
+
+          <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
+            <div *ngIf="f.confirmarContrasenya.errors.required">Error</div>
+          </div>
+          <div [ngSwitch]="mostrarMissatge"></div>
+          <br>
+
+          <input type="button"  class="btn btn-secondary" (click)="confirmar()" value="Confirma la contrasenya"/>
+        </div>
+      </div>
+
 
       <br><br>
       <!--botó-->
