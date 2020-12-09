@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Usuari } from '../../Usuari.llista';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Usuari } from './Usuari.llista';
+
 
 @Component({
   selector: 'app-llista',
@@ -11,6 +13,10 @@ export class LlistaComponent implements OnInit {
   // Variables
   usuaris: Usuari[]=[];
   usuariSeleccionat: Usuari = null;
+  categoria: string = null;
+
+  //recollim la info del fill Registre
+  @Input () acte: Usuari;
 
   constructor() { }
 
@@ -21,10 +27,20 @@ export class LlistaComponent implements OnInit {
     this.usuaris.push(new Usuari('Antonio', 'Orozco','48','assets/AntonioOrozco.jpg','Aquest es el tercer Usuari de la llista', 'WAMozzart@mozart.com','**','**'))
   }
 
+   //funcio per afegir una nova comanda a l'array
+   addRegistre(newRegistre: Usuari): void {
+    this.usuaris.push(newRegistre);
+  }
+
+  //funcio per quan click a registre ens faci el canvi al botó
+  cambiarAccio(categoria: string):void {
+    this.categoria = categoria;
+  }
+
+
 // la funcion que se ejecuta en el moemnto que se clica un usuario asignandole valor a ese usuario
   seleccionarUsuari(usuaris:Usuari):void{
     this.usuariSeleccionat = usuaris;
   }
-
 
 }
