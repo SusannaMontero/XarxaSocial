@@ -1,4 +1,5 @@
 <div class="cotnainer ml-3">
+  <br>
   <div class="row ml-10">
     <div class="col-6">
       <div class="list-group ">
@@ -6,6 +7,7 @@
         <a *ngFor="let usuari of usuaris" class="list-group-item list-group-item-action text-center" [ngClass]="{ 'active': usuariSeleccionat === usuari }" (click)="seleccionarUsuari(usuari)">{{usuari.nom}} {{usuari.cognom}}</a>
         
       </div>
+      <br>
       <button class="btn btn-primary" (click)="cambiarAccio('registrar')">Registrar</button>
 
       <div *ngIf="categoria === 'registrar'" class="row" style="margin-top: 1em;">

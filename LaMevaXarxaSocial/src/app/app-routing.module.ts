@@ -18,7 +18,8 @@ const routes: Routes = [{path: '', pathMatch: 'full', redirectTo: 'inici'},
 { path: 'header', component: HeaderComponent },
 { path: 'llista-us', component: LlistaUsComponent },
 { path: 'perfil', component: PerfilComponent },
-{ path: 'detall', component: DetallComponent }
+{ path: 'detall', component: DetallComponent },
+{ path: '**', redirectTo: 'inici' }
 ];
 
 
