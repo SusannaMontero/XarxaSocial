@@ -14,23 +14,22 @@ import { validarContrasenya } from './validarContrasenya';
   styleUrls: ['./registre.component.css']
 })
 
-
-
 export class RegistreComponent implements OnInit {
+
+  //a postriori modifico = a null enlloc de directament els******************************************
+   newRegistre: Usuari = null;
 
   // Creem un emisor de registre que quan fem click a Registrar ens porta a Registre
   @Output() registrar: EventEmitter<Usuari> = new EventEmitter<Usuari>();
-  newRegistre: Usuari;
-
-
-  //inicialitzem la variable formBuilder(hem importat a dalt)del tipus FormBuilder
-  constructor( private formBuilder: FormBuilder ) { }
 
   // variables
   user: FormGroup;
   submitted = false;
   mostrarMissatge = '';
 
+
+  //inicialitzem la variable formBuilder(hem importat a dalt)del tipus FormBuilder
+  constructor( private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
 
@@ -54,6 +53,9 @@ export class RegistreComponent implements OnInit {
 //funcio que s'executa a l'enviar el formulari
 onFormSubmit(itemForm: any): void {
 
+  //afegit a postriori************************************
+  console.log(itemForm);
+
 // guardem les dades del nou usuari en un registre nou
 this.newRegistre = new Usuari(itemForm.controls.nom.value,
                    itemForm.controls.cognom.value,
@@ -63,6 +65,9 @@ this.newRegistre = new Usuari(itemForm.controls.nom.value,
                    itemForm.controls.email.value,
                    itemForm.controls.contrasenya.value,
                    itemForm.controls.confirmarContrasenya.value);
+
+// afegit a posteriori ************************************
+console.log(this.newRegistre);
 
 //enviem l'event registrar i li passem l'usuari creat
 this.registrar.emit(this.newRegistre)
@@ -75,7 +80,7 @@ this.registrar.emit(this.newRegistre)
   }
 
   //funció per enviar dades
-  enviarDades(nom, cognom, edat, foto, descripcio, email, confirmarContrasenya) {
+  enviarDades() {
     this.submitted = true;
     //si cap camp no compleix les condicions
     if ( this.user.invalid) {

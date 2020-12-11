@@ -9,7 +9,8 @@
       <button class="btn btn-primary" (click)="cambiarAccio('registrar')">Registrar</button>
 
       <div *ngIf="categoria === 'registrar'" class="row" style="margin-top: 1em;">
-      <app-registre (addRegistre)="addRegistre($event)"></app-registre></div>
+        <!--modificat a posteriori, afegit (registrar)***************************-->
+      <app-registre (registrar)="addRegistre($event)"></app-registre></div>
     </div>
 
     <div class="col-6">

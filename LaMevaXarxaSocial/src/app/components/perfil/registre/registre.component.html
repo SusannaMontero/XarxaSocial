@@ -2,7 +2,8 @@
 <br>
 <div class="container">
     <!--formulari recollida de dades-->
-    <form [formGroup]="user" #itemForm="ngForm">
+    <!--afegit a posteriori (ngSubmit)="onFormSubmit(itemform)***********************-->
+    <form [formGroup]="user" #itemForm="ngForm" (ngSubmit)="onFormSubmit(itemForm)">
 
       <!--camp nom (formControlName és una etiqueta que aten els canvis al valor del control-->
         <div class="form-row">
@@ -95,7 +96,7 @@
           <input type="pasword" formControlName="contrasenya"  id="contrasenya" placeholder="Contrasenya" class="form-control"
           [ngClass]="{'is-invalid': submitted && f.contrasenya.errors}" ngModel required>
 
-          <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
+          <div *ngIf="submitted && f.contrasenya.errors" class="invalid_feedback">
              <div *ngIf="f.contrasenya.errors.required">Contrasenya obligatoria</div>
           </div>
         </div>
@@ -106,21 +107,20 @@
           <input type="password" formControlName="confirmarContrasenya" id="confirarContrasenya" placeholder="Repeteix la contrasenya" class="form-control"
           [ngClass]="{'is-invalid': submitted && f.confirmarContrasenya.errors}" ngModel required>
 
-          <div *ngIf="submitted && f.email.errors" class="invalid_feedback">
+          <div *ngIf="submitted && f.confirmarContrasenya.errors" class="invalid_feedback">
             <div *ngIf="f.confirmarContrasenya.errors.required">Error</div>
+            <div *ngIf="f.confirmarContrasenya.errors.validarContrasenya">Error</div>
           </div>
           <div [ngSwitch]="mostrarMissatge"></div>
           <br>
-
-          <input type="button"  class="btn btn-secondary" (click)="confirmar()" value="Confirma la contrasenya"/>
         </div>
-      </div>
+     </div>
 
 
       <br><br>
       <!--botó-->
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" (click)="enviarDades()">Enviar</button>
+            <button type="submit" class="btn btn-primary" (click)="onFormSubmit(itemForm)">Enviar</button>
         </div>
     </form>
 </div>
